@@ -7,14 +7,14 @@
 package linkedlist
 
 //FindKthToTail 输出链表的倒数第K个节点
-func FindKthToTail(head *LinkedList, k int) *LinkedList {
+func FindKthToTail(head *ListNode, k int) *ListNode {
 	if head == nil || k < 0 {
 		return nil
 	}
-	
+
 	pre, back := head, head
 	count := 0
-	for count < k - 1 {
+	for count < k-1 {
 		if pre.Next != nil {
 			pre = pre.Next
 			count++

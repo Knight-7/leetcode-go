@@ -39,10 +39,5 @@ func IsPopOrder(pushOrder, popOrder []int) bool {
 		}
 	}
 
-	stack1 := Stack{
-		data:   make([]int, 0),
-		length: 0,
-	}
-	stack1.Empty()
 	return true
 }

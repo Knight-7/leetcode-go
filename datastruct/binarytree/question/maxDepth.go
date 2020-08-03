@@ -4,10 +4,12 @@
 //Email   :     knight2347@163.com
 //idea    :     求二叉树的最大深度 分治法
 
-package binarytree
+package question
+
+import "leetcode/datastruct/binarytree"
 
 //MaxDepth 二叉树的最大深度
-func MaxDepth(root *BinaryTree) int {
+func MaxDepth(root *binarytree.TreeNode) int {
 	if root == nil {
 		return 0
 	}

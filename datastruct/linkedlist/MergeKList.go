@@ -7,12 +7,12 @@
 package linkedlist
 
 //MergeKList 合并K个有序链表(采用将K个链表转换为K-1个链表两两合并)
-func MergeKList(lists []*LinkedList) *LinkedList {
+func MergeKList(lists []*ListNode) *ListNode {
 	if lists == nil || len(lists) == 0 {
 		return nil
 	}
 
-	mergeHead := &LinkedList{-1, nil}
+	mergeHead := &ListNode{-1, nil}
 	for _, v := range lists {
 		mergeHead.Next = Merge(mergeHead.Next, v)
 	}
@@ -20,7 +20,7 @@ func MergeKList(lists []*LinkedList) *LinkedList {
 }
 
 //MergeKListRecursive 合并K个有序链表(采用分治法)
-func MergeKListRecursive(lists []*LinkedList) *LinkedList {
+func MergeKListRecursive(lists []*ListNode) *ListNode {
 	if lists == nil || len(lists) <= 0 {
 		return nil
 	}
@@ -28,7 +28,7 @@ func MergeKListRecursive(lists []*LinkedList) *LinkedList {
 		return lists[0]
 	}
 
-	var mergeNode *LinkedList
+	var mergeNode *ListNode
 	m := len(lists) >> 1
 	mergeNode = Merge(MergeKListRecursive(lists[0:m]), MergeKListRecursive(lists[m:]))
 

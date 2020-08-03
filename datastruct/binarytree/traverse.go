@@ -12,7 +12,7 @@ import (
 )
 
 //PreorderTraverse 先序遍历
-func PreorderTraverse(root *BinaryTree) {
+func PreorderTraverse(root *TreeNode) {
 	if root != nil {
 		fmt.Printf("%d ", root.Val)
 		PreorderTraverse(root.Left)
@@ -21,9 +21,9 @@ func PreorderTraverse(root *BinaryTree) {
 }
 
 //PreorderTravseWithoutRecursive 先序遍历非递归
-func PreorderTravseWithoutRecursive(root *BinaryTree) []int {
+func PreorderTravseWithoutRecursive(root *TreeNode) []int {
 	ans := make([]int, 0)
-	stack := make([]*BinaryTree, 0)
+	stack := make([]*TreeNode, 0)
 	for len(stack) > 0 || root != nil {
 		for root != nil {
 			ans = append(ans, root.Val)
@@ -38,7 +38,7 @@ func PreorderTravseWithoutRecursive(root *BinaryTree) []int {
 }
 
 //InorderTraverse 中序遍历
-func InorderTraverse(root *BinaryTree) {
+func InorderTraverse(root *TreeNode) {
 	if root != nil {
 		InorderTraverse(root.Left)
 		fmt.Printf("%d ", root.Val)
@@ -47,9 +47,9 @@ func InorderTraverse(root *BinaryTree) {
 }
 
 //InorderTravseWithoutRecursive 中序遍历非递归
-func InorderTravseWithoutRecursive(root *BinaryTree) []int {
+func InorderTravseWithoutRecursive(root *TreeNode) []int {
 	ans := make([]int, 0)
-	stack := make([]*BinaryTree, 0)
+	stack := make([]*TreeNode, 0)
 	for len(stack) > 0 || root != nil {
 		for root != nil {
 			stack = append(stack, root)
@@ -64,7 +64,7 @@ func InorderTravseWithoutRecursive(root *BinaryTree) []int {
 }
 
 //PostorderTraverse 后序遍历
-func PostorderTraverse(b *BinaryTree) {
+func PostorderTraverse(b *TreeNode) {
 	if b != nil {
 		PostorderTraverse(b.Left)
 		PostorderTraverse(b.Right)
@@ -73,10 +73,10 @@ func PostorderTraverse(b *BinaryTree) {
 }
 
 //PostorderTravseWithoutRecursive 后序遍历非递归
-func PostorderTravseWithoutRecursive(b *BinaryTree) []int {
+func PostorderTravseWithoutRecursive(b *TreeNode) []int {
 	ans := make([]int, 0)
-	stack := make([]*BinaryTree, 0)
-	var lastvisited *BinaryTree
+	stack := make([]*TreeNode, 0)
+	var lastvisited *TreeNode
 	for len(stack) > 0 || b != nil {
 		for b != nil {
 			stack = append(stack, b)
@@ -95,7 +95,7 @@ func PostorderTravseWithoutRecursive(b *BinaryTree) []int {
 }
 
 //CengciTraverse 层次遍历
-func CengciTraverse(root *BinaryTree) {
+func CengciTraverse(root *TreeNode) {
 	q := queue.GetQueue()
 	q.Push(root)
 	count := 1
@@ -103,7 +103,7 @@ func CengciTraverse(root *BinaryTree) {
 		tmpCount := 0
 		for count > 0 {
 			now, _ := q.Pop()
-			tmp := now.(*BinaryTree)
+			tmp := now.(*TreeNode)
 			fmt.Printf("%d ", tmp.Val)
 			count--
 			if tmp.Left != nil {

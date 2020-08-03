@@ -18,3 +18,10 @@ func TestIsMach(t *testing.T) {
 		t.Log("failed")
 	}
 }
+
+func TestAddString(t *testing.T) {
+	num1 := "13213546543"
+	num2 := "78979"
+	ans := addString(num1, num2)
+	t.Log(ans)
+}

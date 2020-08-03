@@ -7,7 +7,7 @@
 package linkedlist
 
 //Merge 合并两个有序的链表
-func Merge(list1, list2 *LinkedList) *LinkedList {
+func Merge(list1, list2 *ListNode) *ListNode {
 	if list1 == nil {
 		return list2
 	}
@@ -15,7 +15,7 @@ func Merge(list1, list2 *LinkedList) *LinkedList {
 		return list1
 	}
 
-	head := &LinkedList{-1, nil}
+	head := &ListNode{-1, nil}
 	mergeNode := head
 	for list1 != nil && list2 != nil {
 		if list1.Val < list2.Val {
@@ -36,12 +36,12 @@ func Merge(list1, list2 *LinkedList) *LinkedList {
 			}
 		}
 	}
-	
+
 	return head.Next
 }
 
 //MergeRecursive 合并有序链表(递归)
-func MergeRecursive(list1, list2 *LinkedList) *LinkedList {
+func MergeRecursive(list1, list2 *ListNode) *ListNode {
 	if list1 == nil {
 		return list2
 	}
@@ -49,7 +49,7 @@ func MergeRecursive(list1, list2 *LinkedList) *LinkedList {
 		return list1
 	}
 
-	var mergeNode *LinkedList
+	var mergeNode *ListNode
 	if list1.Val < list2.Val {
 		mergeNode = list1
 		mergeNode.Next = MergeRecursive(list1.Next, list2)

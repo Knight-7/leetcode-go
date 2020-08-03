@@ -4,16 +4,18 @@
 //Email   :     knight2347@163.com
 //idea    :     根据树的遍历构建二叉树
 
-package binarytree
+package question
+
+import "leetcode/datastruct/binarytree"
 
 //ConstructWithPreorderAndInorder 根据前序遍历和中序遍历构建二叉树
-func ConstructWithPreorderAndInorder(preOrder, inOrder []int) (root *BinaryTree) {
+func ConstructWithPreorderAndInorder(preOrder, inOrder []int) (root *binarytree.TreeNode) {
 	//判断遍历数组是否符合规范
 	if preOrder == nil || inOrder == nil || len(preOrder) < 0 || len(preOrder) != len(inOrder) {
 		return
 	}
 
-	root = &BinaryTree{preOrder[0], nil, nil}
+	root = &binarytree.TreeNode{preOrder[0], nil, nil}
 
 	//递归终止条件，即当只有一个节点的时候
 	if len(preOrder) == 1 {
@@ -39,18 +41,18 @@ func ConstructWithPreorderAndInorder(preOrder, inOrder []int) (root *BinaryTree)
 	if index+1 < len(preOrder) {
 		root.Right = ConstructWithPreorderAndInorder(preOrder[index+1:], inOrder[index+1:])
 	}
-	
+
 	return
 }
 
 //ConstructWithPostorderAndInorder 根据后序遍历和中序遍历构建二叉树
-func ConstructWithPostorderAndInorder(postorder []int, inorder []int) (root *BinaryTree) {
+func ConstructWithPostorderAndInorder(postorder []int, inorder []int) (root *binarytree.TreeNode) {
 	//判断遍历数组是否符合规范
 	if postorder == nil || inorder == nil || len(postorder) < 0 || len(postorder) != len(inorder) {
 		return
 	}
 
-	root = &BinaryTree{postorder[len(postorder)-1], nil, nil}
+	root = &binarytree.TreeNode{postorder[len(postorder)-1], nil, nil}
 
 	//递归终止条件，即只有一个节点的时候
 	if len(postorder) == 1 {
@@ -73,7 +75,7 @@ func ConstructWithPostorderAndInorder(postorder []int, inorder []int) (root *Bin
 	}
 
 	//构造右子树
-	if index + 1 < len(postorder) {
+	if index+1 < len(postorder) {
 		root.Right = ConstructWithPostorderAndInorder(postorder[index:len(postorder)-1], inorder[index+1:])
 	}
 

@@ -8,8 +8,8 @@ package binarytree
 
 import "fmt"
 
-//BinarySearchTree 二叉查找树
-type BinarySearchTree struct {
+//SearchTree 二叉查找树
+type SearchTree struct {
 	Root *Node
 }
 
@@ -21,7 +21,7 @@ type Node struct {
 }
 
 //Insert 插入函数
-func (bst *BinarySearchTree)Insert(val int) {
+func (bst *SearchTree) Insert(val int) {
 	//如果根节点为空，那么改点就为根节点，否则插入一个点
 	if bst.Root == nil {
 		bst.Root = &Node{val, nil, nil}
@@ -49,7 +49,7 @@ func insertNode(root *Node, val int) {
 }
 
 //Delete 删除节点值为val的节点
-func (bst *BinarySearchTree)Delete(val int) bool {
+func (bst *SearchTree) Delete(val int) bool {
 	_, ok := deleteNode(bst.Root, val)
 	return ok
 }
@@ -102,7 +102,7 @@ func deleteNode(root *Node, val int) (*Node, bool) {
 }
 
 //Min 查找最小的值
-func (bst *BinarySearchTree)Min() (int, bool) {
+func (bst *SearchTree) Min() (int, bool) {
 	return min(bst.Root)
 }
 
@@ -121,7 +121,7 @@ func min(root *Node) (int, bool) {
 }
 
 //Max 查找最大的值
-func (bst *BinarySearchTree)Max() (int, bool) {
+func (bst *SearchTree) Max() (int, bool) {
 	return max(bst.Root)
 }
 
@@ -129,7 +129,7 @@ func max(root *Node) (int, bool) {
 	if root == nil {
 		return 0, false
 	}
-	
+
 	n := root
 	for {
 		if n.Right == nil {
@@ -140,7 +140,7 @@ func max(root *Node) (int, bool) {
 }
 
 //PreOrderTravse 二叉查找树的先序遍历
-func (bst *BinarySearchTree)PreOrderTravse() {
+func (bst *SearchTree) PreOrderTravse() {
 	preOrderTravse(bst.Root)
 }
 
@@ -153,7 +153,7 @@ func preOrderTravse(root *Node) {
 }
 
 //InOrderTravse 二叉查找树的中序遍历
-func (bst *BinarySearchTree)InOrderTravse() {
+func (bst *SearchTree) InOrderTravse() {
 	inOrderTravse(bst.Root)
 }
 
@@ -166,7 +166,7 @@ func inOrderTravse(root *Node) {
 }
 
 //PostOrderTravse 二叉查找树的后序遍历
-func (bst *BinarySearchTree)PostOrderTravse() {
+func (bst *SearchTree) PostOrderTravse() {
 	postOrderTravse(bst.Root)
 }
 
@@ -179,7 +179,7 @@ func postOrderTravse(root *Node) {
 }
 
 //LevelTravse 二叉查找树的层次遍历
-func (bst *BinarySearchTree)LevelTravse() {
+func (bst *SearchTree) LevelTravse() {
 	if bst.Root == nil {
 		return
 	}

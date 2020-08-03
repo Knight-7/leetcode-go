@@ -7,7 +7,7 @@
 package linkedlist
 
 //MeetNode 判断链表中有没有环，如果有环，那么MeetNode就不为空，否则MeetNode就为空(双指针)
-func MeetNode(head *LinkedList) *LinkedList {
+func MeetNode(head *ListNode) *ListNode {
 	if head == nil {
 		return nil
 	}
@@ -29,7 +29,7 @@ func MeetNode(head *LinkedList) *LinkedList {
 }
 
 //EntryNodeOfLoop 查找链表中的环的入口节点(双指针)
-func EntryNodeOfLoop(head *LinkedList) *LinkedList {
+func EntryNodeOfLoop(head *ListNode) *ListNode {
 	if head == nil {
 		return nil
 	}

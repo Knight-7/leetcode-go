@@ -7,12 +7,12 @@
 package linkedlist
 
 //ReverseLinkedList 翻转一个链表（使用栈）
-func ReverseLinkedList(head *LinkedList) *LinkedList {
+func ReverseLinkedList(head *ListNode) *ListNode {
 	if head == nil {
 		return head
 	}
 
-	stack := make([]*LinkedList, 0)
+	stack := make([]*ListNode, 0)
 	for head.Next != nil {
 		stack = append(stack, head)
 		head = head.Next
@@ -30,29 +30,30 @@ func ReverseLinkedList(head *LinkedList) *LinkedList {
 	return ans
 }
 
-func reverseLinkedListWithoutStack2(head *LinkedList) (*LinkedList, *LinkedList) {
+func reverseLinkedListWithoutStack2(head *ListNode) (*ListNode, *ListNode) {
 	if head != nil && head.Next != nil {
-		pre, ans :=  reverseLinkedListWithoutStack2(head.Next)
+		pre, ans := reverseLinkedListWithoutStack2(head.Next)
 		pre.Next = head
 		head.Next = nil
 		return head, ans
 	}
 	return head, head
 }
+
 //ReverseLinkedListWithoutStack 翻转一个链表(递归)
-func ReverseLinkedListWithoutStack(head *LinkedList) *LinkedList {
+func ReverseLinkedListWithoutStack(head *ListNode) *ListNode {
 	_, ans := reverseLinkedListWithoutStack2(head)
 	return ans
 }
 
 //ReverseLinkedListIterate 翻转链表(迭代)
-func ReverseLinkedListIterate(head *LinkedList) *LinkedList {
+func ReverseLinkedListIterate(head *ListNode) *ListNode {
 	if head == nil {
 		return nil
 	}
 
-	var reverseHead *LinkedList
-	var preNode *LinkedList
+	var reverseHead *ListNode
+	var preNode *ListNode
 	node := head
 	for node != nil {
 		nextNode := node.Next

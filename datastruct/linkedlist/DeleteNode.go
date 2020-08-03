@@ -7,7 +7,7 @@
 package linkedlist
 
 //DeleteNode 删除链表中的节点
-func DeleteNode(head, BeDeleteNode *LinkedList) {
+func DeleteNode(head, BeDeleteNode *ListNode) {
 	if BeDeleteNode == nil || head == nil {
 		return
 	}

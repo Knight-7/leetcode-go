@@ -7,8 +7,8 @@
 package linkedlist
 
 //要保留两个节点的相对初始位置
-func partition(head *LinkedList, x int) *LinkedList {
-	hBig, hSmall := &LinkedList{-1, nil}, &LinkedList{-1, nil}
+func partition(head *ListNode, x int) *ListNode {
+	hBig, hSmall := &ListNode{-1, nil}, &ListNode{-1, nil}
 	headBig, headSamll := hBig, hSmall
 	for head != nil {
 		if head.Val < x {

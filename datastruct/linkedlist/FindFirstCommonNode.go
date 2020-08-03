@@ -7,7 +7,7 @@
 package linkedlist
 
 //FindFirstCommonNode 查找第一个公共的节点
-func FindFirstCommonNode(list1, list2 *LinkedList) *LinkedList {
+func FindFirstCommonNode(list1, list2 *ListNode) *ListNode {
 	if list1 == nil || list2 == nil {
 		return nil
 	}

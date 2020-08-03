@@ -6,9 +6,9 @@
 
 package binarytree
 
-//BinaryTree 二叉树
-type BinaryTree struct {
+//TreeNode 二叉树
+type TreeNode struct {
 	Val   int
-	Left  *BinaryTree
-	Right *BinaryTree
+	Left  *TreeNode
+	Right *TreeNode
 }

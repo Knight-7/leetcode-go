@@ -6,10 +6,10 @@
 
 package linkedlist
 
-//LinkedList 链表
-type LinkedList struct {
+//ListNode 链表
+type ListNode struct {
 	Val  int
-	Next *LinkedList
+	Next *ListNode
 }
 
 //ComplexLinkedList 复杂链表
@@ -20,14 +20,14 @@ type ComplexLinkedList struct {
 }
 
 //GenerateList 根据切片生成一个链表
-func GenerateList(nums []int) *LinkedList {
+func GenerateList(nums []int) *ListNode {
 	if len(nums) == 0 {
 		return nil
 	}
-	head := &LinkedList{nums[0], nil}
+	head := &ListNode{nums[0], nil}
 	tmp := head
 	for i := 1; i < len(nums); i++ {
-		node := &LinkedList{nums[i], nil}
+		node := &ListNode{nums[i], nil}
 		tmp.Next = node
 		tmp = tmp.Next
 	}

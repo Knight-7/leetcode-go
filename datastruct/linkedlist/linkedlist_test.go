@@ -68,11 +68,11 @@ func TestCloneComplexLinkedList(t *testing.T) {
 }
 
 func TestFindFirstCommonNode(t *testing.T) {
-	l1 := &LinkedList{4, nil}
-	l2 := &LinkedList{3, l1}
-	l3 := &LinkedList{7, l2}
-	l4 := &LinkedList{2, l2}
-	l5 := &LinkedList{7, l4}
+	l1 := &ListNode{4, nil}
+	l2 := &ListNode{3, l1}
+	l3 := &ListNode{7, l2}
+	l4 := &ListNode{2, l2}
+	l5 := &ListNode{7, l4}
 	commonNode := FindFirstCommonNode(l3, l5)
 	t.Log(commonNode.Val)
 }
@@ -84,5 +84,15 @@ func TestPartition(t *testing.T) {
 	for head != nil {
 		t.Log(head.Val)
 		head = head.Next
+	}
+}
+
+func TestReverstKGroup(t *testing.T) {
+	nums := []int{1, 2, 3, 4, 5, 6, 7}
+	list := GenerateList(nums)
+	ans := reverseKGroup(list, 5)
+	for ans != nil {
+		t.Logf("%d ", ans.Val)
+		ans = ans.Next
 	}
 }

@@ -23,3 +23,9 @@ func TestLongest(t *testing.T) {
 	s := "()(()()"
 	t.Log(longestValidParentheses(s))
 }
+
+func TestIsValid(t *testing.T) {
+	s := "()[]{"
+	ans := isValid(s)
+	t.Log(ans)
+}
