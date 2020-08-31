@@ -2,7 +2,7 @@ package question
 
 import "leetcode/datastruct/binarytree"
 
-func lowestCommonAncestorSearchTree(root, p, q *binarytree.Node) *binarytree.Node {
+func lowestCommonAncestorSearchTree(root, p, q *binarytree.TreeNode) *binarytree.TreeNode {
 	if root.Val == p.Val || root.Val == q.Val {
 		return root
 	}

@@ -4,12 +4,12 @@
 //Email   :     knight2347@163.com
 //idea    :     堆的测试文件
 
-package head
+package heap
 
 import "testing"
 
-func Test_top(t *testing.T) {
-	var h Header
-	h = &MinHead{make([]int, 0)}
-	t.Log(h.Top())
+func TestTopK(t *testing.T) {
+	nums := []int{1, 1, 1, 2, 2, 3}
+	ans := topKFrequent1(nums, 2)
+	t.Log(ans)
 }

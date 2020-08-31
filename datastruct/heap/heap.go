@@ -6,14 +6,14 @@
 //堆的定义: 1、堆是一种完全二叉树，
 //        : 2、堆要求孩子节点要小于等于或者大于等于父节点
 
-package head
+package heap
 
-//Head 堆
+//Heap 堆
 //Data 堆中维护的数据
 //Cmp 一个比较函数，cmp为 max(a, b) a > b 时为大根堆， min(a, b) a < b时为小根堆
 type Head struct {
-	Data []int
-	Cmp  func(int, int) bool
+	Data []interface{}
+	Cmp  func(interface{}, interface{}) bool
 }
 
 //上浮
@@ -64,13 +64,13 @@ func (h *Head) rightChild(parent int) int {
 
 //Insert 堆中插入数据
 // Example:
-func (h *Head) Insert(val int) {
+func (h *Head) Push(val interface{}) {
 	h.Data = append(h.Data, val)
 	h.shiftUp(len(h.Data) - 1)
 }
 
 //Top 获取堆的顶部数据，获取之前，需要判断堆是否为空
-func (h *Head) Top() int {
+func (h *Head) Top() interface{} {
 	return h.Data[0]
 }
 
@@ -80,7 +80,7 @@ func (h *Head) Size() int {
 }
 
 //Pop 弹出堆的顶部
-func (h *Head) Pop() int {
+func (h *Head) Pop() interface{} {
 	top := h.Top()
 	h.Data[0] = h.Data[len(h.Data)-1]
 	h.Data = h.Data[:len(h.Data)-1]

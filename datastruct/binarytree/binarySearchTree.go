@@ -10,36 +10,29 @@ import "fmt"
 
 //SearchTree 二叉查找树
 type SearchTree struct {
-	Root *Node
-}
-
-//Node 节点
-type Node struct {
-	Val   int
-	Left  *Node
-	Right *Node
+	Root *TreeNode
 }
 
 //Insert 插入函数
 func (bst *SearchTree) Insert(val int) {
 	//如果根节点为空，那么改点就为根节点，否则插入一个点
 	if bst.Root == nil {
-		bst.Root = &Node{val, nil, nil}
+		bst.Root = &TreeNode{val, nil, nil}
 	} else {
 		insertNode(bst.Root, val)
 	}
 }
 
-func insertNode(root *Node, val int) {
+func insertNode(root *TreeNode, val int) {
 	if val < root.Val {
 		if root.Left == nil {
-			root.Left = &Node{val, nil, nil}
+			root.Left = &TreeNode{val, nil, nil}
 		} else {
 			insertNode(root.Left, val)
 		}
 	} else if val > root.Val {
 		if root.Right == nil {
-			root.Right = &Node{val, nil, nil}
+			root.Right = &TreeNode{val, nil, nil}
 		} else {
 			insertNode(root.Right, val)
 		}
@@ -54,7 +47,7 @@ func (bst *SearchTree) Delete(val int) bool {
 	return ok
 }
 
-func deleteNode(root *Node, val int) (*Node, bool) {
+func deleteNode(root *TreeNode, val int) (*TreeNode, bool) {
 	if root == nil {
 		return root, false
 	}
@@ -106,7 +99,7 @@ func (bst *SearchTree) Min() (int, bool) {
 	return min(bst.Root)
 }
 
-func min(root *Node) (int, bool) {
+func min(root *TreeNode) (int, bool) {
 	if root == nil {
 		return 0, false
 	}
@@ -125,7 +118,7 @@ func (bst *SearchTree) Max() (int, bool) {
 	return max(bst.Root)
 }
 
-func max(root *Node) (int, bool) {
+func max(root *TreeNode) (int, bool) {
 	if root == nil {
 		return 0, false
 	}
@@ -144,7 +137,7 @@ func (bst *SearchTree) PreOrderTravse() {
 	preOrderTravse(bst.Root)
 }
 
-func preOrderTravse(root *Node) {
+func preOrderTravse(root *TreeNode) {
 	if root != nil {
 		fmt.Printf("%d ", root.Val)
 		preOrderTravse(root.Left)
@@ -157,7 +150,7 @@ func (bst *SearchTree) InOrderTravse() {
 	inOrderTravse(bst.Root)
 }
 
-func inOrderTravse(root *Node) {
+func inOrderTravse(root *TreeNode) {
 	if root != nil {
 		inOrderTravse(root.Left)
 		fmt.Printf("%d ", root.Val)
@@ -170,7 +163,7 @@ func (bst *SearchTree) PostOrderTravse() {
 	postOrderTravse(bst.Root)
 }
 
-func postOrderTravse(root *Node) {
+func postOrderTravse(root *TreeNode) {
 	if root != nil {
 		postOrderTravse(root.Left)
 		postOrderTravse(root.Right)
@@ -186,8 +179,8 @@ func (bst *SearchTree) LevelTravse() {
 	levelTravse(bst.Root)
 }
 
-func levelTravse(root *Node) {
-	q := make([]*Node, 0)
+func levelTravse(root *TreeNode) {
+	q := make([]*TreeNode, 0)
 	q = append(q, root)
 	levelCount := 1     //记录一层中节点的个数
 	nextLevelCount := 0 //记录下一层中节点的个数

@@ -25,3 +25,20 @@ func TestAddString(t *testing.T) {
 	ans := addString(num1, num2)
 	t.Log(ans)
 }
+
+func TestIPAddr(t *testing.T) {
+	s := "25525511135"
+	ret := restoreIpAddresses(s)
+	t.Log(ret)
+}
+
+func TestBinarySubstring(t *testing.T) {
+	s := "000"
+	ret := countBinarySubstrings(s)
+	t.Log(ret)
+}
+
+func TestPepeatedSubstringPattern(t *testing.T) {
+	s := "bb"
+	t.Log(repeatedSubstringPattern(s))
+}

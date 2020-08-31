@@ -19,3 +19,15 @@ func TestCuttingRope(t *testing.T) {
 		t.Error("测试失败")
 	}
 }
+
+func TestRob(t *testing.T) {
+	nums := []int{1, 2}
+	ans := rob(nums)
+	t.Log(ans)
+}
+
+func TestRob2(t *testing.T) {
+	nums := []int{1}
+	ans := rob2(nums)
+	t.Log(ans)
+}

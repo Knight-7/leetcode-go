@@ -28,7 +28,7 @@ func LongestSubstringWithoutDuplication(str string) int {
 			//更新当前子串的长度
 			curLength = k - preIndex
 		}
-		//记录当前字符的位置
+		//更新当前字符的位置
 		position[v] = k
 	}
 	if curLength > maxLength {

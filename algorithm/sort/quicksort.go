@@ -10,7 +10,7 @@ import "fmt"
 
 //QuickSort 快速排序
 func QuickSort(nums []int) []int {
-	quicksort(nums, 0, len(nums) - 1)
+	quicksort(nums, 0, len(nums)-1)
 	return nums
 }
 
@@ -20,8 +20,8 @@ func quicksort(nums []int, l, r int) {
 	}
 
 	pivot := partition(nums, l, r)
-	quicksort(nums, l, pivot - 1)
-	quicksort(nums, pivot + 1, r)
+	quicksort(nums, l, pivot-1)
+	quicksort(nums, pivot+1, r)
 }
 
 func partition(nums []int, l, r int) int {
@@ -30,19 +30,13 @@ func partition(nums []int, l, r int) int {
 		if nums[i] < nums[r] {
 			small++
 			if i != small {
-				swap(&nums[i], &nums[small])
+				nums[i], nums[small] = nums[small], nums[i]
 			}
 		}
 	}
 	small++
-	swap(&nums[small], &nums[r])
+	nums[small], nums[r] = nums[r], nums[small]
 	return small
-}
-
-func swap(a, b *int) {
-	tmp := *a
-	*a = *b
-	*b = tmp
 }
 
 func main() {
