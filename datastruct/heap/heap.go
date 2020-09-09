@@ -88,6 +88,6 @@ func (h *Head) Pop() interface{} {
 	return top
 }
 
-func (h *Head) HeadSort() {
+func (h *Head) HeapSort() {
 
 }

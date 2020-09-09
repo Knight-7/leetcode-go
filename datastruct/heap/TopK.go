@@ -19,6 +19,7 @@ func (h *HeapNode) Push(x interface{}) {
 	*h = append(*h, x.(Node))
 }
 
+//配合heap.Pop()使用，将堆顶元素置换到最后，并将最后的元素去掉
 func (h *HeapNode) Pop() interface{} {
 	tmp := *h
 	top := tmp[0]

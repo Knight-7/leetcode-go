@@ -26,3 +26,13 @@ func TestImage(t *testing.T) {
 	image = floodFill(image, 1, 1, 1)
 	t.Log(image)
 }
+
+func TestDFS_Room(t *testing.T) {
+	rooms := [][]int{{1}, {1, 1}}
+	t.Log(canVisitAllRooms(rooms))
+}
+
+func TestCombine(t *testing.T) {
+	ans := combine(4, 3)
+	t.Log(ans)
+}
