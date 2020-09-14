@@ -41,3 +41,8 @@ func TestCombinationSum2(t *testing.T) {
 	ans := combinationSum2([]int{2, 1, 2, 2, 5}, 5)
 	t.Log(ans)
 }
+
+func TestCombinationSum3(t *testing.T) {
+	ans := combinationSum3(3, 7)
+	t.Log(ans)
+}
