@@ -42,7 +42,12 @@ func TestCombinationSum2(t *testing.T) {
 	t.Log(ans)
 }
 
+<<<<<<< HEAD
 func TestExist(t *testing.T) {
 	ans := exist([][]byte{{'a', 'b'}, {'c', 'd'}}, "cdba")
+=======
+func TestCombinationSum3(t *testing.T) {
+	ans := combinationSum3(3, 7)
+>>>>>>> 0ee59d48cb62885263df4ca2dd0ee9f9f0241846
 	t.Log(ans)
 }
