@@ -6,6 +6,10 @@
 
 package main
 
-func main() {
+import "fmt"
 
+func main() {
+	a, b := 34, 2
+	t := float64(a) / float64(b)
+	fmt.Printf("%f %T\n", t, t)
 }
