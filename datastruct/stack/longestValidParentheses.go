@@ -18,7 +18,7 @@ func longestValidParentheses(s string) int {
 			if len(stack) == 0 {
 				stack = append(stack, k)
 			} else {
-				sumLength = max(sumLength, k - stack[len(stack)-1])
+				sumLength = max(sumLength, k-stack[len(stack)-1])
 			}
 		}
 	}

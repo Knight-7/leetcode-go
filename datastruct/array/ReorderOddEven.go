@@ -13,14 +13,14 @@ func ReorderOddEven(array []int) {
 	}
 	length := len(array)
 
-	pBefore, pEnd := 0, length - 1
+	pBefore, pEnd := 0, length-1
 	for pBefore < pEnd {
 		// 前一个指针向后找第一个偶数
-		for pBefore < length && array[pBefore] % 2 == 1 {
+		for pBefore < length && array[pBefore]%2 == 1 {
 			pBefore++
 		}
 		// 后一个指针向前找第一个奇数
-		for pEnd > 0 && array[pEnd] % 2 != 1 {
+		for pEnd > 0 && array[pEnd]%2 != 1 {
 			pEnd--
 		}
 

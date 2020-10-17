@@ -3,7 +3,7 @@
 * @Date    :     2020/09/13 18:29:19
 * @Email   :     knight2347@163.com
 * @idea    :     leetcode 690 员工的重要性
-*/
+ */
 
 package hashmap
 
@@ -20,8 +20,8 @@ func getImportance(employees []*Employee, id int) int {
 	for _, v := range employees {
 		employeesMap[v.Id] = v
 	}
-	var dfs func (employee *Employee)
-	dfs = func (employee *Employee) {
+	var dfs func(employee *Employee)
+	dfs = func(employee *Employee) {
 		importances += employee.Importance
 		for _, v := range employee.Subordinates {
 			dfs(employeesMap[v])

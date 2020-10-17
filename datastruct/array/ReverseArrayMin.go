@@ -16,10 +16,10 @@ func ReverseArrayMin(numbers []int, length int) int {
 		return numbers[0]
 	}
 
-	l, r := 0, length - 1
+	l, r := 0, length-1
 	m := l
 	for l < r {
-		if r - l == 1 {
+		if r-l == 1 {
 			return numbers[r]
 		}
 
@@ -34,7 +34,7 @@ func ReverseArrayMin(numbers []int, length int) int {
 			r = m
 		}
 	}
-	
+
 	return numbers[r]
 }
 

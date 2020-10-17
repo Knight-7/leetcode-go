@@ -70,19 +70,19 @@ func threeSum(nums []int) [][]int {
 	ans := make([][]int, 0)
 
 	for first := 0; first < n; first++ {
-		if first > 0 && nums[first] == nums[first - 1] {
+		if first > 0 && nums[first] == nums[first-1] {
 			continue
 		}
 
 		target := 0 - nums[first]
 		third := n - 1
 
-		for second := first + 1; second < n - 1; second++ {
-			if second > first + 1 && nums[second] == nums[second - 1] {
+		for second := first + 1; second < n-1; second++ {
+			if second > first+1 && nums[second] == nums[second-1] {
 				continue
 			}
 
-			for second < third && nums[second] + nums[third] > target {
+			for second < third && nums[second]+nums[third] > target {
 				third--
 			}
 
@@ -90,11 +90,11 @@ func threeSum(nums []int) [][]int {
 				break
 			}
 
-			if nums[second] + nums[third] == target {
+			if nums[second]+nums[third] == target {
 				ans = append(ans, []int{nums[first], nums[second], nums[third]})
 			}
 		}
-		
+
 	}
 
 	return ans

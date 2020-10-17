@@ -3,7 +3,7 @@
 * @Date    :     2020/09/13 18:13:40
 * @Email   :     knight2347@163.com
 * @idea    :     leetcode 676 实现一个魔法字典
-*/
+ */
 
 package hashmap
 
@@ -11,7 +11,6 @@ type MagicDictionary struct {
 	keys    map[int]bool
 	buckets map[int][]string
 }
-
 
 /** Initialize your data structure here. */
 func Constructor() MagicDictionary {
@@ -21,14 +20,12 @@ func Constructor() MagicDictionary {
 	}
 }
 
-
-func (this *MagicDictionary) BuildDict(dictionary []string)  {
+func (this *MagicDictionary) BuildDict(dictionary []string) {
 	for _, v := range dictionary {
 		this.keys[len(v)] = true
 		this.buckets[len(v)] = append(this.buckets[len(v)], v)
 	}
 }
-
 
 func (this *MagicDictionary) Search(searchWord string) bool {
 	length := len(searchWord)
@@ -51,7 +48,6 @@ func (this *MagicDictionary) Search(searchWord string) bool {
 	}
 	return false
 }
-
 
 /**
  * Your MagicDictionary object will be instantiated and called as such:

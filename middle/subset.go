@@ -21,12 +21,12 @@ func backtrack(nums []int, pos int, tmp []int, ans *[][]int) {
 	*ans = append(*ans, t)
 	for i := pos; i < len(nums); i++ {
 		tmp = append(tmp, nums[i])
-		backtrack(nums, i + 1, tmp, ans)
-		tmp = tmp[:len(tmp) - 1]
+		backtrack(nums, i+1, tmp, ans)
+		tmp = tmp[:len(tmp)-1]
 	}
 }
 
-func main(){
+func main() {
 	nums := []int{1, 2, 3}
 	fmt.Println(subsets(nums))
 }

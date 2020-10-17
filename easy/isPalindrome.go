@@ -14,7 +14,7 @@ import (
 //方法一：将数字转换为字符串，然后将前后对应的数字一一比较
 func isPalindrome(x int) bool {
 	str := strconv.Itoa(x)
-	l, r := 0, len(str) - 1
+	l, r := 0, len(str)-1
 	for {
 		fmt.Println(l, r)
 		if str[l] != str[r] {
@@ -36,17 +36,17 @@ func isPalindrome2(x int) bool {
 		return true
 	}
 	//负数和个位数为0的，肯定不是回文串
-	if x < 0 || x % 10 == 0 {
+	if x < 0 || x%10 == 0 {
 		return false
 	}
-	
+
 	num := 0
 	for x > num {
-		num = num * 10 + x % 10
+		num = num*10 + x%10
 		x /= 10
 	}
 
-	return x == num || x == num / 10
+	return x == num || x == num/10
 }
 
 func main() {

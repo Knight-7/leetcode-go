@@ -16,7 +16,7 @@ type MinStack struct {
 //Push 压入栈
 func (s *MinStack) Push(item int) {
 	s.data = append(s.data, item)
-	
+
 	if s.length == 0 || s.mindata[s.length-1] > item {
 		s.mindata = append(s.mindata, item)
 	} else {

@@ -33,7 +33,7 @@ func equationsPossible(equations []string) bool {
 	return true
 }
 
-func find(x int, pre []int) int {  //查找根节点
+func find(x int, pre []int) int { //查找根节点
 	for x != pre[x] {
 		pre[x] = pre[pre[x]]
 		x = pre[x]

@@ -2,7 +2,7 @@
 //Date    :     2020/06/21 16:11:29
 //Version :     1.0
 //Email   :     knight2347@163.com
-//idea    :     
+//idea    :
 
 package main
 
@@ -13,7 +13,7 @@ func strStr(haystack string, needle string) int {
 		return 0
 	}
 
-	for i := 0; i < haystackLen - needleLen + 1; i++ {
+	for i := 0; i < haystackLen-needleLen+1; i++ {
 		if haystack[i:i+needleLen] == needle {
 			return i
 		}

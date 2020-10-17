@@ -13,18 +13,18 @@ func exist(board [][]byte, word string) bool {
 	for i := range vis {
 		vis[i] = make([]bool, len(board[0]))
 	}
-	var dfs func (pos, x, y int) bool
+	var dfs func(pos, x, y int) bool
 	dfs = func(pos, x, y int) bool {
 		if x < 0 || x >= len(board) || y < 0 || y >= len(board[0]) || vis[x][y] {
 			return false
 		}
-		if pos == len(word) - 1 && board[x][y] == word[pos] {
+		if pos == len(word)-1 && board[x][y] == word[pos] {
 			return true
 		}
 		if word[pos] == board[x][y] {
 			vis[x][y] = true
-			tmpExisted := dfs(pos + 1, x + 1, y) || dfs(pos + 1, x - 1, y) ||
-				dfs(pos + 1, x, y + 1) || dfs(pos + 1, x, y - 1)
+			tmpExisted := dfs(pos+1, x+1, y) || dfs(pos+1, x-1, y) ||
+				dfs(pos+1, x, y+1) || dfs(pos+1, x, y-1)
 			vis[x][y] = false
 			return tmpExisted
 		}

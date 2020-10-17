@@ -10,8 +10,8 @@ func maxScoreSightseeingPair(A []int) int {
 	maxScore, mx := 0, A[0]
 	n := len(A)
 	for i := 1; i < n; i++ {
-		maxScore = max(maxScore, A[i] - i + mx)
-		mx = max(mx, A[i] + i)
+		maxScore = max(maxScore, A[i]-i+mx)
+		mx = max(mx, A[i]+i)
 	}
 	return maxScore
 }

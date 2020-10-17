@@ -9,16 +9,16 @@ package DFS
 
 func combinationSum3(k int, n int) [][]int {
 	ans := make([][]int, 0)
-	if n / k >= 9 {
+	if n/k >= 9 {
 		return ans
 	}
 	tmp := []int{}
 	var dfs func(pos, reset int)
-	dfs = func (pos, reset int)  {
+	dfs = func(pos, reset int) {
 		if reset == 0 && len(tmp) == k {
 			ans = append(ans, append([]int{}, tmp...))
 			return
-		} 
+		}
 		if len(tmp) == k {
 			return
 		}
@@ -27,8 +27,8 @@ func combinationSum3(k int, n int) [][]int {
 				return
 			}
 			tmp = append(tmp, i)
-			dfs(i + 1, reset - i)
-			tmp = tmp[:len(tmp) - 1]
+			dfs(i+1, reset-i)
+			tmp = tmp[:len(tmp)-1]
 		}
 	}
 	dfs(1, n)

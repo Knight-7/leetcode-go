@@ -6,22 +6,17 @@
 
 package main
 
-import {
+import (
 	"sort"
-}
+)
 
 func findBestValue(arr []int, target int) int {
 	sort.Ints(arr)
 	n := len(arr)
 	presum := make([]int, n)
 	for i := 1; i < n; i++ {
-		presum[i] = presum[i - 1] + arr[i - 1]
+		presum[i] = presum[i-1] + arr[i-1]
 	}
 
-	r := arr[n - 1]
-	ans, diff := 0, target
-	for l := 1; l <= r; l++ {
-		
-	}
-
+	return 0
 }

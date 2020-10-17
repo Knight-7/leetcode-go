@@ -18,13 +18,13 @@ func CuttingRope(n int) int {
 		return 2
 	}
 
-	dp := make([]int, n + 1)
+	dp := make([]int, n+1)
 	dp[1] = 1
 	dp[2] = 2
 	dp[3] = 3
 	for i := 4; i <= n; i++ {
-		for j := 1; j <= i / 2; j++ {
-			dp[i] = max(dp[i], dp[j] * dp[i-j])
+		for j := 1; j <= i/2; j++ {
+			dp[i] = max(dp[i], dp[j]*dp[i-j])
 		}
 	}
 
