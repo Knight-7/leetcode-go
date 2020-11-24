@@ -19,7 +19,7 @@ func addString(num1, num2 string) string {
 		} else {
 			flag = false
 		}
-		ans = string((tmpSum%10)+'0') + ans
+		ans = string(rune((tmpSum%10)+'0')) + ans
 		index1--
 		index2--
 	}
@@ -32,7 +32,7 @@ func addString(num1, num2 string) string {
 			} else {
 				flag = false
 			}
-			ans = string((tmpNum%10)+'0') + ans
+			ans = string(rune((tmpNum%10)+'0')) + ans
 			index1--
 		}
 		if flag {
@@ -49,7 +49,7 @@ func addString(num1, num2 string) string {
 			} else {
 				flag = false
 			}
-			ans = string((tmpNum%10)+'0') + ans
+			ans = string(rune((tmpNum%10)+'0')) + ans
 			index2--
 		}
 		if flag {

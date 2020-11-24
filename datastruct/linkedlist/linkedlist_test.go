@@ -96,3 +96,17 @@ func TestReverstKGroup(t *testing.T) {
 		ans = ans.Next
 	}
 }
+
+func Test_ReorderList(t *testing.T) {
+	head := GenerateList([]int{1})
+	ans := reorderList(head)
+	for ans != nil {
+		t.Logf("%d ", ans.Val)
+		ans = ans.Next
+	}
+}
+
+func Test_IsPalindrome(t *testing.T) {
+	head := GenerateList([]int{1, 2, 3, 2, 1})
+	t.Log(isPalindrome(head))
+}

@@ -42,3 +42,15 @@ func TestPepeatedSubstringPattern(t *testing.T) {
 	s := "bb"
 	t.Log(repeatedSubstringPattern(s))
 }
+
+func TestBackspaceCompare(t *testing.T) {
+	S := "ab##"
+	T := "a#d#"
+	t.Log(backspaceCompare(S, T))
+}
+
+func TestIsLongPressedName(t *testing.T) {
+	name := "abcd"
+	typed := "aaabbcccccdd"
+	t.Log(isLongPressedName(name, typed))
+}
